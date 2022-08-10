@@ -1,0 +1,16 @@
+{
+  "name": "test-prototype",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "brain.js": "^2.0.0-beta.15",
+    "gpu.js": "^1.4.12"
+  }
+}
