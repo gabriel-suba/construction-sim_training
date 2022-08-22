@@ -24,10 +24,12 @@ net.train(trainingData, {
 	iterations: 1500,
 });
 
-// const networkState = net.toJSON();
-// fs.writeFileSync('../net/pretrained_cement.json', JSON.stringify(networkState), 'utf-8');
+const networkState = net.toJSON();
+fs.writeFileSync('./net/pretrained_cement.json', JSON.stringify(networkState), 'utf-8');
 
-const output = testAccuracy(testData, net);
+// const tempTestData = [[1000, 400], [500, 200]]
+
+const output = testAccuracy(tempTestData, net);
 const avgDiff = output.reduce((a,b) => a + b, 0) / output.length;
 console.log(output);
 console.log(avgDiff);

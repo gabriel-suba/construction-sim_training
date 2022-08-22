@@ -1,6 +1,8 @@
 const brain = require('brain.js');
 const fs = require('fs');
 
+// TODO: CALCULATE COST PER MATERIALS
+
 const minArea = 200;
 const maxArea = 2000;
 
@@ -107,5 +109,6 @@ net.train(trainingData, {
 
 // const networkState = net.toJSON();
 // fs.writeFileSync('./net/cost_rough_finish.json', JSON.stringify(networkState), 'utf-8');
+
 
 testAccuracy(testData, net);

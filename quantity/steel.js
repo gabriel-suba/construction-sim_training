@@ -24,8 +24,8 @@ net.train(trainingData, {
 	iterations: 5000,
 });
 
-// const networkState = net.toJSON();
-// fs.writeFileSync('../net/pretrained_steel.json', JSON.stringify(networkState), 'utf-8');
+const networkState = net.toJSON();
+fs.writeFileSync('./net/pretrained_steel.json', JSON.stringify(networkState), 'utf-8');
 
 const output = testAccuracy(testData, net);
 const avgDiff = output.reduce((a,b) => a + b, 0) / output.length;

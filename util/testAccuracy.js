@@ -13,6 +13,19 @@ const testAccuracy = (data, net) => {
 		var output = data[i][1];
 		var prediction = scaleUp(net.run([input]), min, max);
 		var diff = parseFloat(prediction.toFixed(2)) - parseFloat(output.toFixed(2));
+
+		var absErr = parseFloat(prediction.toFixed(2)) - parseFloat(output.toFixed(2));
+		var meanErr = (parseFloat(prediction.toFixed(2)) + parseFloat(output.toFixed(2))) / 2;
+		var relErr = (absErr / meanErr) * 100;
+
+		console.log(
+			`
+			predicted: ${prediction}, 
+			actual: ${output}, 
+			abs_err: ${absErr},
+			rel_err: ${relErr.toFixed(2)}%
+			`
+		);
 		
 		arr.push(diff);
 	}
